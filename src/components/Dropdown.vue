@@ -12,7 +12,7 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref, onMounted, onUnmounted, watch } from 'vue'
+import { defineComponent, ref, watch } from 'vue'
 import useClickOutSide from '../hooks/useClickOutSide'
 export default defineComponent({
   props: {
@@ -26,7 +26,6 @@ export default defineComponent({
     const changeToggle = () => {
       toggle.value = !toggle.value
     }
-
     const dropdownRef = ref<null | HTMLElement>(null) // 关联dropdownRef
     const { isClickOutSide } = useClickOutSide(dropdownRef)
     watch(isClickOutSide, (val) => {
